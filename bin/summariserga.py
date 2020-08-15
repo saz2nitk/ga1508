@@ -15,7 +15,7 @@ class FindSummary:
             self.config = yaml.load(fl)
 
     def loadData(self):
-        with open(self.config['data']['articles_path']) as fl:
+        with open(self.config['data']['articles_path'],'r',encoding='utf-8') as fl:
             articleText = fl.read()
         return articleText
             
@@ -70,9 +70,9 @@ class FindSummary:
         summaryText = ' '.join(summaryTextList)
         return summaryText
     
-if __name__=="__main__":
-    summaryObj = FindSummary('../config/config')
-    summaryText = summaryObj.summarise()
+#if __name__=="__main__":
+#    summaryObj = FindSummary('../config/config')
+#    summaryText = summaryObj.summarise()
         
     
     
