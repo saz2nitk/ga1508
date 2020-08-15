@@ -16,11 +16,21 @@ app = Flask(__name__)
 def checkApiStatus():
     return "Yay!! Its all good"
 
-@app.route('/get_summary',methods=['GET'])
+@app.route('/get_summary',methods=['POST'])
 def summarise():
+    article = json.loads(request.data.decode())['article']
     summaryObj = FindSummary('config/config')
-    summaryText = summaryObj.summarise()
+    summaryText = summaryObj.summarise(article)
     return summaryText
+
+@app.route('/about_us',methods=['POST'])
+def dummyReq():
+#    jsonStr = request.data.decode()
+#    dataDict = json.loads(jsonStr)
+#    article = dataDict['article']
+    article = json.loads(request.data.decode())['article']
+    print('Printing data:\n',article)
+    return "Ok request works"
 
 if __name__=="__main__":
     app.run(host='127.0.0.1',port=5000,debug=True)
