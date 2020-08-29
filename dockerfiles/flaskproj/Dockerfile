@@ -8,7 +8,7 @@ RUN apt-get -y install python3-pip
 #RUN pip3 install flask
 RUN mkdir -p /opt/myprojects
 
-COPY gasummariser /opt/myprojects
+COPY ../../../gasummariser /opt/myprojects
 #COPY addarray.py /opt/myprojects
 WORKDIR /opt/myprojects/gasummariser
 
