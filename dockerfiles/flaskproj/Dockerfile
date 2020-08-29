@@ -12,6 +12,6 @@ COPY gasummariser /opt/myprojects
 #COPY addarray.py /opt/myprojects
 WORKDIR /opt/myprojects/gasummariser
 
-RUN pip3 install -r requirements.txt
+#RUN pip3 install -r requirements.txt
 
-CMD ["python3","bin/gaservice1508.py"]
+#CMD ["python3","bin/gaservice1508.py"]
