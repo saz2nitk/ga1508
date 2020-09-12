@@ -12,6 +12,7 @@ import json
 
 app = Flask(__name__)
 
+#small modification
 @app.route('/home',methods=['GET'])
 def checkApiStatus():
     return "Yay!! Its all good"
